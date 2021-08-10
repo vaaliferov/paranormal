@@ -136,7 +136,7 @@
 <img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x)-(1-(p+0.1))*LOSS-C-">
 <img src="https://render.githubusercontent.com/render/math?math=-[N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C]=0.1*LOSS=10000">
 
+### 6. Телеграм бот
 
-
-### https://t.me/paranormal_diabetes_bot
-![image](pics/tg.png)
+В качестве демо был разработа сервис в виде телеграм бота.
+Подробнее о нем и его работе в [Bot](/bot/)
