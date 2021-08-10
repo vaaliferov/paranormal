@@ -23,7 +23,7 @@
 Признаки не противоречат друг другу, данные соответствуют гипотезе.
 
 [Baseline](baseline.ipynb) модель показывает следующие результаты:
-[](pics/basemodel_confusion_matrix.png)
+![alt text](pics/basemodel_confusion_matrix.png)
 
 #### 5. Оценка экономического эффекта
 
