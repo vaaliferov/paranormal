@@ -93,7 +93,7 @@ def handle_text(update, context):
             update.message.reply_text(f'{classes[predicted[0]]} ({probas[0]:.4f})')
 
 
-model = pickle.load(open('rf.pkl', 'rb'))
+model = pickle.load(open('random_forest.pkl', 'rb'))
 opt = json.load(open('config.json','r'))
 updater = Updater(opt['bot_token'])
 dispatcher = updater.dispatcher

@@ -1,7 +1,5 @@
-json
 numpy
 pandas
-pickle
 sklearn
 catboost
 scikit-learn

@@ -1,0 +1,11 @@
+[Unit]
+Description=diabetes_bot
+
+[Service]
+Type=simple
+User=<user>
+WorkingDirectory=/opt/diabetes
+ExecStart=/opt/diabetes/bot.py
+
+[Install]
+WantedBy=multi-user.target
