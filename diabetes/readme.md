@@ -104,9 +104,12 @@
 К расходам относятся обепечение прохождения теста(поддержка сервиса)  и возможные репутационные риски, которые могут возникнуть, если модель будет плохо работать. Например, если всем модель предскажет одинаковый результат или здоровому человеку скажет, что у него большой риск болезни и, наоборот, больному покажет небольшой риск. 
 
 
-*Экономический эффект:* <img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C">
+*Экономический эффект:* 
+
+<img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C">
 
 Клинику интересует ситуация, когда выручка больше расходов:
+
 <img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C\geqslant0">
 
 Значения приведённых показателей оценили экспертно:
@@ -124,11 +127,18 @@
 
 
 Оценим, насколько изменится эффект от роста качества модели на 1%:
-<img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-(p+0.01))*LOSS - C - \\ - [
- N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C ]= 0.01*LOSS = 1000\, рублей ">
+
+<img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*">
+<img src="https://render.githubusercontent.com/render/math?math=*(1-x) - (1-(p+0.01))*LOSS - C - \\ - ">
+<img src="https://render.githubusercontent.com/render/math?math= - [N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C ]">
+<img src="https://render.githubusercontent.com/render/math?math= = 0.01*LOSS = 1000\, рублей ">
 
 Оценим, насколько изменится эффект от роста качества модели на 10%:
-<img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-(p+0.1))*LOSS - C -\\ - [ N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C] = 0.1*LOSS = 10000\, рублей ">
+
+<img src="https://render.githubusercontent.com/render/math?math=N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*">
+<img src="https://render.githubusercontent.com/render/math?math=*(1-x) - (1-(p+0.1))*LOSS - C -\\ - ">
+<img src="https://render.githubusercontent.com/render/math?math= - [ N*(\eta*H*ARPU_{high}+\mu*(1-H)*ARPU_{low})*(1-x) - (1-p)*LOSS - C]">
+<img src="https://render.githubusercontent.com/render/math?math= = 0.1*LOSS = 10000\, рублей ">
 
 
 
