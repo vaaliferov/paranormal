@@ -64,10 +64,10 @@ systemctl enable melanoma_bot.service
 ```bash
 git clone git@github.com:vaaliferov/paranormal.git
 git clone https://github.com/vaaliferov/paranormal.git
-gdown --id 1t74E3bt8bzW3ZDHqL4cV2nmlTSXQhmF7 -O /opt/melanoma/model.pt
 
-vim dockerfile (<user>)
+cd paranormal/melanoma/bot
 vim config.json (<token>)
+gdown --id 1t74E3bt8bzW3ZDHqL4cV2nmlTSXQhmF7 -O model.pt
 
 docker build -t <user>/melanoma_bot .
 docker run --rm --user user --name melanoma_bot <user>/melanoma_bot
