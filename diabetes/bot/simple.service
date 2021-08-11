@@ -5,7 +5,7 @@ Description=diabetes_bot
 Type=simple
 User=<user>
 WorkingDirectory=/opt/diabetes
-ExecStart=/opt/diabetes/bot.py
+ExecStart=python3 /opt/diabetes/bot.py
 
 [Install]
 WantedBy=multi-user.target
