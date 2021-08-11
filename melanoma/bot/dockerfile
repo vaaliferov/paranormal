@@ -1,0 +1,20 @@
+FROM ubuntu
+ARG USER=user
+ARG PROJNAME=melanoma_bot
+ENV PROJNAME=${PROJNAME}
+RUN mkdir /${PROJNAME}
+WORKDIR /${PROJNAME}
+
+COPY apt.txt requirements.txt ./
+COPY bot.py config.json model.pt ./
+
+RUN apt update && apt upgrade -y
+RUN apt install -y $(cat apt.txt)
+RUN pip3 install -r ./requirements.txt
+
+RUN useradd -m ${USER}
+RUN chmod -R 755 /${PROJNAME}
+RUN chown -R ${USER} /${PROJNAME}
+USER ${USER}
+
+CMD ["python3", "./bot.py"]

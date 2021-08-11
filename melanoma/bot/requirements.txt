@@ -1,0 +1,7 @@
+torch
+numpy
+pandas
+pillow
+torchvision
+python-telegram-bot
+efficientnet-pytorch

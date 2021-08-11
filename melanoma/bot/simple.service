@@ -1,0 +1,11 @@
+[Unit]
+Description=melanoma_bot
+
+[Service]
+Type=simple
+User=<user>
+WorkingDirectory=/opt/melanoma
+ExecStart=python3 /opt/melanoma/bot.py
+
+[Install]
+WantedBy=multi-user.target
