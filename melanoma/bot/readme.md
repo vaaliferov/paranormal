@@ -1,32 +1,4 @@
 
-### simple
-
-```bash
-git clone git@github.com:vaaliferov/paranormal.git
-git clone https://github.com/vaaliferov/paranormal.git
-
-cd paranormal/melanoma/bot
-cp simple.service melanoma_bot.service
-vim melanoma_bot.service (<user>)
-vim config.json (<token>)
-apt install $(cat apt.txt)
-pip3 install -r requirements.txt
-
-mkdir /opt/melanoma
-chown <user> /opt/melanoma
-chmod 755 /opt/melanoma
-cp bot.py config.json /opt/melanoma
-cp melanoma_bot.service /etc/systemd/system
-
-gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O /opt/melanoma/model.onnx
-chmod +x /opt/melanoma/bot.py
-
-systemctl daemon-reload
-systemctl start melanoma_bot.service
-systemctl status melanoma_bot.service
-systemctl enable melanoma_bot.service
-```
-
 ### virtualenv
 
 ```bash
@@ -34,7 +6,6 @@ git clone git@github.com:vaaliferov/paranormal.git
 git clone https://github.com/vaaliferov/paranormal.git
 
 cd paranormal/melanoma/bot
-cp venv.service melanoma_bot.service
 vim melanoma_bot.service (<user>)
 vim config.json (<token>)
 apt install $(cat apt.txt)
@@ -44,16 +15,13 @@ chown <user> /opt/melanoma
 chmod 755 /opt/melanoma
 cp bot.py config.json /opt/melanoma
 cp melanoma_bot.service /etc/systemd/system
+gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O /opt/melanoma/model.onnx
 
-apt install python3-venv
 pip3 install virtualenv
 python3 -m venv /opt/melanoma/env
 source /opt/melanoma/env/bin/activate
 pip3 install -r requirements.txt
 deactivate
-
-gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O /opt/melanoma/model.onnx
-chmod +x /opt/melanoma/bot.py
 
 systemctl daemon-reload
 systemctl start melanoma_bot.service
