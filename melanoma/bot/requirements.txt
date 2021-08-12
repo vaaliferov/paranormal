@@ -1,7 +1,4 @@
-torch
 numpy
-pandas
 pillow
-torchvision
+onnxruntime
 python-telegram-bot
-efficientnet-pytorch
