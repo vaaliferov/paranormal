@@ -1,21 +1,5 @@
-FROM ubuntu
-ARG USER=user
-ARG PROJNAME=diabetes_bot
-ENV PROJNAME=${PROJNAME}
-RUN mkdir /${PROJNAME}
-WORKDIR /${PROJNAME}
-
-COPY apt.txt requirements.txt ./
-COPY bot.py random_forest.pkl config.json ./
-
-RUN apt update
-# RUN apt upgrade -y
-RUN apt install -y $(cat apt.txt)
-RUN pip3 install -r ./requirements.txt
-
-RUN useradd -m ${USER}
-RUN chmod -R 755 /${PROJNAME}
-RUN chown -R ${USER} /${PROJNAME}
-USER ${USER}
-
-CMD ["python3", "./bot.py"]
+FROM python:3.9.6-slim
+WORKDIR /usr/src/app
+COPY bot.py random_forest.pkl config.json requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["python", "./bot.py"]

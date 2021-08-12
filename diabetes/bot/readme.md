@@ -45,6 +45,7 @@ cp random_forest.pkl /opt/diabetes
 cp bot.py config.json /opt/diabetes
 cp diabetes_bot.service /etc/systemd/system
 
+
 pip3 install virtualenv
 python3 -m venv /opt/diabetes/env
 source /opt/diabetes/env/bin/activate
@@ -69,6 +70,7 @@ cd paranormal/diabetes/bot
 vim config.json (<token>)
 
 docker build -t <user>/diabetes_bot .
+docker run --rm --name diabetes_bot <user>/diabetes_bot
 docker run --rm --user user --name diabetes_bot <user>/diabetes_bot
 ```
 

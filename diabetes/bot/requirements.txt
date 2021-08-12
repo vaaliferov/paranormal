@@ -1,6 +1,5 @@
 numpy
 pandas
-# sklearn
 # catboost
 scikit-learn
 python-telegram-bot
