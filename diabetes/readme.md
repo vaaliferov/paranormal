@@ -92,11 +92,11 @@
 
 * Также целевой класс коррелирует с внезапной потерей веса. https://www.medicinenet.com/is_weight_loss_caused_by_diabetes_dangerous/ask.htm
 
-[Модель](Model.ipynb)
+[Модель](model.ipynb)
 
 ## 5. Оценка экономического эффекта
 
-[Оценка экономического эффекта](EconomicEffect.ipynb)
+[Оценка экономического эффекта](economic_effect.ipynb)
 
 ## 6. Телеграм бот
 
