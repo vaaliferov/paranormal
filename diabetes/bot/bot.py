@@ -80,7 +80,7 @@ def handle_text(update, context):
         
         if len(answers[chat_id]) < len(questions):
             q = questions[len(answers[chat_id])]
-            a = check_answer(q, text)
+            a = check_answer(q, text.lower())
             if a is not None: answers[chat_id].append(a)
         
         if len(answers[chat_id]) < len(questions):
