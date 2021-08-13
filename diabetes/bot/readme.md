@@ -13,8 +13,8 @@ apt install $(cat apt.txt)
 mkdir /opt/diabetes
 chown <user> /opt/diabetes
 chmod 755 /opt/diabetes
-cp random_forest.pkl /opt/diabetes
 cp bot.py config.json /opt/diabetes
+cp ext_random_forest.pkl /opt/diabetes
 cp diabetes_bot.service /etc/systemd/system
 
 pip3 install virtualenv
