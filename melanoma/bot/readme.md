@@ -17,6 +17,7 @@ cp bot.py config.json /opt/melanoma
 cp melanoma_bot.service /etc/systemd/system
 gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O /opt/melanoma/model.onnx
 
+apt install python3-venv
 pip3 install virtualenv
 python3 -m venv /opt/melanoma/env
 source /opt/melanoma/env/bin/activate
