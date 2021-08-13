@@ -88,12 +88,14 @@ def handle_text(update, context):
         
         else:
             data = pd.DataFrame([answers[chat_id]], columns=columns)
+            data.replace({'male':1,'female':0}, inplace=True)
+            data.replace({'yes':1,'no':0}, inplace=True)
             probas = model.predict_proba(data)[:,1]
             predicted = model.predict(data)
             update.message.reply_text(f'{classes[predicted[0]]} ({probas[0]:.4f})')
 
 
-model = pickle.load(open('random_forest.pkl', 'rb'))
+model = pickle.load(open('ext_random_forest.pkl', 'rb'))
 opt = json.load(open('config.json','r'))
 updater = Updater(opt['bot_token'])
 dispatcher = updater.dispatcher

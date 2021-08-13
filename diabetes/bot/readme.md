@@ -13,10 +13,11 @@ apt install $(cat apt.txt)
 mkdir /opt/diabetes
 chown <user> /opt/diabetes
 chmod 755 /opt/diabetes
-cp random_forest.pkl /opt/diabetes
 cp bot.py config.json /opt/diabetes
+cp ext_random_forest.pkl /opt/diabetes
 cp diabetes_bot.service /etc/systemd/system
 
+apt install python3-venv
 pip3 install virtualenv
 python3 -m venv /opt/diabetes/env
 source /opt/diabetes/env/bin/activate
