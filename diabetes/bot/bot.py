@@ -97,8 +97,14 @@ def handle_text(update, context):
     chat_id = update.message.chat_id
     
     if text == '/start':
+
         answers[chat_id] = []
         update.message.reply_text(questions[0][0])
+
+        if chat_id != opt['bot_owner_id']:
+            username = update.message.from_user.username
+            context.bot.send_message(opt['bot_owner_id'], f'user @{username}')
+
     
     elif chat_id in answers:
         
