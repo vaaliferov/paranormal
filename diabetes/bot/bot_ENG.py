@@ -34,22 +34,22 @@ columns = [
 ]
 
 questions = [
-    ['Укажите Ваш возраст?', int, 0, 120, None],
-    ['Ваш пол? (мужской / женский)', str, None, None, ['м','ж']],
-    ['Есть ли у Вас симптомы полиурии (увеличенное образование мочи)? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Испытываете ли Вы неутолимую жажду?? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Наблюдается ли у Вас внезапная потеря веса? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Испытываете ли слабость? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Наблюдаете ли у себя повышенный аппетит? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Генитальная молочница? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Расплывчатость зрения? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Зуд? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Раздражительность? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Медленное заживление ран? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Частичный парез (потеря мышечной силы)? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Жесткость мышц? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Усиленное выпадение волос? (Да / Нет)', str, None, None, ['Да','Нет']],
-    ['Ожирение? (Да / Нет)', str, None, None, ['Да','Нет']]
+    ['age?', int, 0, 120, None],
+    ['gender? (male / female)', str, None, None, ['male','female']],
+    ['polyuria? (yes / no)', str, None, None, ['yes','no']],
+    ['polydipsia? (yes / no)', str, None, None, ['yes','no']],
+    ['sudden_weight_loss? (yes / no)', str, None, None, ['yes','no']],
+    ['weakness? (yes / no)', str, None, None, ['yes','no']],
+    ['polyphagia? (yes / no)', str, None, None, ['yes','no']],
+    ['genital_thrush? (yes / no)', str, None, None, ['yes','no']],
+    ['visual_blurring? (yes / no)', str, None, None, ['yes','no']],
+    ['itching? (yes / no)', str, None, None, ['yes','no']],
+    ['irritability? (yes / no)', str, None, None, ['yes','no']],
+    ['delayed_healing? (yes / no)', str, None, None, ['yes','no']],
+    ['partial_paresis? (yes / no)', str, None, None, ['yes','no']],
+    ['muscle_stiffness? (yes / no)', str, None, None, ['yes','no']],
+    ['alopecia? (yes / no)', str, None, None, ['yes','no']],
+    ['obesity? (yes / no)', str, None, None, ['yes','no']]
 ]
 
 answers = {}
@@ -88,8 +88,8 @@ def handle_text(update, context):
         
         else:
             data = pd.DataFrame([answers[chat_id]], columns=columns)
-            data.replace({'м':1,'ж':0}, inplace=True)
-            data.replace({'Да':1,'Нет':0}, inplace=True)
+            data.replace({'male':1,'female':0}, inplace=True)
+            data.replace({'yes':1,'no':0}, inplace=True)
             probas = model.predict_proba(data)[:,1]
             predicted = model.predict(data)
             update.message.reply_text(f'{classes[predicted[0]]} ({probas[0]:.4f})')
