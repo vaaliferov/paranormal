@@ -1,0 +1,11 @@
+[Unit]
+Description=diabetes_app
+
+[Service]
+Type=simple
+User=<user>
+WorkingDirectory=/opt/diabetes_app
+ExecStart=/opt/diabetes_app/env/bin/streamlit run --server.headless True --server.address 0.0.0.0 --server.port=8501 /opt/diabetes_app/app.py
+
+[Install]
+WantedBy=multi-user.target
