@@ -41,5 +41,6 @@ docker build -t <user>/diabetes_app .
 docker run -p 127.0.0.1:8501:8501/tcp --rm --name diabetes_app <user>/diabetes_app
 ```
 
-http://diabetes.ipq.co:8501
-![image](../pics/app.png)
+http://diabetes.ipq.co:8501  
+
+![image](../pics/app.png)  
