@@ -64,6 +64,9 @@ def predict(model, sex, age, site, image):
 
 st.title(lng.melanoma_diagnosis)
 
+if 'model' not in st.session_state:
+    st.session_state.model = onnxruntime.InferenceSession('model.onnx')
+
 with st.form(key='melanoma_input_form'):
     age = st.slider(lng.age, 0, 90, 25, 5)
     sex = st.radio(lng.gender, genders)
@@ -74,5 +77,4 @@ with st.form(key='melanoma_input_form'):
 if submit and image is not None:
     im = Image.open(image)
     st.image(im, width=200)
-    model = onnxruntime.InferenceSession('model.onnx')
-    st.write(predict(model, sex, age, site, image))
+    st.write(predict(st.session_state.model, sex, age, site, image))
