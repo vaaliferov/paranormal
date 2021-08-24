@@ -10,20 +10,20 @@ import lang_ru as lng
 max_age = 90
 
 genders = (
-	lng.male,
-	lng.female)
+    lng.male,
+    lng.female)
 
 sites = (
-	lng.anterior_torso,
-	lng.head_neck,
-	lng.lateral_torso,
-	lng.lower_extremity,
-	lng.oral_genital,
-	lng.palms_soles,
-	lng.posterior_torso,
-	lng.torso,
-	lng.upper_extremity,
-	lng.nan)
+    lng.anterior_torso,
+    lng.head_neck,
+    lng.lateral_torso,
+    lng.lower_extremity,
+    lng.oral_genital,
+    lng.palms_soles,
+    lng.posterior_torso,
+    lng.torso,
+    lng.upper_extremity,
+    lng.nan)
 
 def pad(im):
     w, h = im.size; m = np.max([w, h])
@@ -56,24 +56,24 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 def predict(model, sex, age, site, image):
-	x = load_image(image, 256)
-	meta = get_meta_features(sex, age, site, sites, max_age)
-	i0, i1 = (i.name for i in model.get_inputs())
-	outs = model.run(None, {i0: x, i1: meta})
-	y = sigmoid(outs[0])[0][0]
-	return int(y > 0.5), y
+    x = load_image(image, 256)
+    meta = get_meta_features(sex, age, site, sites, max_age)
+    i0, i1 = (i.name for i in model.get_inputs())
+    outs = model.run(None, {i0: x, i1: meta})
+    y = sigmoid(outs[0])[0][0]
+    return int(y > 0.5), y
 
 st.title(lng.melanoma_diagnosis)
 
 with st.form(key='melanoma_input_form'):
-	age = st.slider(lng.age, 0, 90, 25, 5)
-	sex = st.radio(lng.gender, genders)
-	site = st.radio(lng.site, sites)
-	image = st.file_uploader('photo', type='jpg')
-	submit = st.form_submit_button(label=lng.check)
+    age = st.slider(lng.age, 0, 90, 25, 5)
+    sex = st.radio(lng.gender, genders)
+    site = st.radio(lng.site, sites)
+    image = st.file_uploader('photo', type='jpg')
+    submit = st.form_submit_button(label=lng.check)
 
 if submit and image is not None:
-	im = Image.open(image)
-	st.image(im, width=200)
-	model = onnxruntime.InferenceSession('model.onnx')
-	st.write(predict(model, sex, age, site, image))
+    im = Image.open(image)
+    st.image(im, width=200)
+    model = onnxruntime.InferenceSession('model.onnx')
+    st.write(predict(model, sex, age, site, image))
