@@ -58,8 +58,7 @@ def sigmoid(x):
 def predict(model, sex, age, site, image):
     x = load_image(image, 256)
     meta = get_meta_features(sex, age, site, sites, max_age)
-    i0, i1 = (i.name for i in model.get_inputs())
-    outs = model.run(None, {i0: x, i1: meta})
+    outs = model.run(None, {'x': x, 'meta': meta})
     y = sigmoid(outs[0])[0][0]
     return int(y > 0.5), y
 
