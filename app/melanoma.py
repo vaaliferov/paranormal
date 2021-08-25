@@ -78,5 +78,9 @@ def app():
 
     if submit and image is not None:
         im = Image.open(image)
+        model = st.session_state.model
+        pred, prob = predict(model, sex, age, site, image)
+        e = '⚠️' if pred else '✅'
+        p = lng.high_prob if pred else lng.low_prob
+        st.markdown(f'{p} ({prob:.4f}) {e}')
         st.image(im, width=200)
-        st.write(predict(st.session_state.model, sex, age, site, image))

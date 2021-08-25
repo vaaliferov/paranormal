@@ -31,16 +31,13 @@ def app():
      
         submit = st.form_submit_button(label=lng.check)
 
-
     if submit:
-        
         data = pd.DataFrame([fields])
         data.replace({lng.male: 1, lng.female: 0}, inplace=True)
         data.replace({True: 1, False: 0}, inplace=True)
-        
         model = pickle.load(open('models/diabetes.pkl','rb'))
         probas = model.predict_proba(data)[:,1]
         predicted = model.predict(data)
-        
-        m = lng.high_risk if predicted[0] else lng.low_risk
-        st.write(f'{m} ({probas[0]:.4f})')
+        e = '⚠️' if predicted[0] else '✅'
+        p = lng.high_prob if predicted[0] else lng.low_prob
+        st.markdown(f'{p} ({probas[0]:.4f}) {e}')
