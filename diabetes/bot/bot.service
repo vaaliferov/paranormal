@@ -4,8 +4,8 @@ Description=diabetes_bot
 [Service]
 Type=simple
 User=<user>
-WorkingDirectory=/opt/diabetes
-ExecStart=/opt/diabetes/env/bin/python3 /opt/diabetes/bot.py
+WorkingDirectory=/opt/diabetes_bot
+ExecStart=/opt/diabetes_bot/env/bin/python3 /opt/diabetes_bot/bot.py
 
 [Install]
 WantedBy=multi-user.target
