@@ -1,0 +1,11 @@
+[Unit]
+Description=paranormal_app
+
+[Service]
+Type=simple
+User=<user>
+WorkingDirectory=/opt/paranormal_app
+ExecStart=/opt/paranormal_app/env/bin/streamlit run --server.headless True --server.address 0.0.0.0 --server.port=8501 /opt/paranormal_app/app.py
+
+[Install]
+WantedBy=multi-user.target

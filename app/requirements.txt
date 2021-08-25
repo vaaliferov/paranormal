@@ -1,0 +1,6 @@
+numpy
+pandas
+pillow
+streamlit
+onnxruntime
+scikit-learn
