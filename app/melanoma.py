@@ -76,14 +76,16 @@ def app():
         image = st.file_uploader('photo', type='jpg')
         submit = st.form_submit_button(label=lng.check)
 
-    if submit and image is None:
-        st.markdown(lng.photo_needed + ' ⚠️')
+    if submit:
 
-    if submit and image is not None:
-        im = Image.open(image)
-        model = st.session_state.model
-        pred, prob = predict(model, sex, age, site, image)
-        e = '⚠️' if pred else '✅'
-        p = lng.high_prob if pred else lng.low_prob
-        st.markdown(f'{p} ({prob:.4f}) {e}')
-        st.image(im, width=200)
+        if image is not None:
+            im = Image.open(image)
+            model = st.session_state.model
+            pred, prob = predict(model, sex, age, site, image)
+            e = '⚠️' if pred else '✅'
+            p = lng.high_prob if pred else lng.low_prob
+            st.markdown(f'{p} ({prob:.4f}) {e}')
+            st.image(im, width=200)
+
+        else:
+            st.markdown(lng.photo_needed + ' ⚠️')
