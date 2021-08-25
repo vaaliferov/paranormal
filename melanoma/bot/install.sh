@@ -17,6 +17,8 @@ chmod 755 /opt/melanoma_bot
 cp -r . /opt/melanoma_bot
 
 cp bot.service /etc/systemd/system/melanoma_bot.service
+
+pip3 install gdown
 gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O /opt/melanoma_bot/model.onnx
 
 apt install $(cat apt.txt)
