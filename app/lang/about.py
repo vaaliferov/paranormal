@@ -1,4 +1,3 @@
-
 description = """ 
 
 # 👨‍⚕️ Paranormal Self-Screening

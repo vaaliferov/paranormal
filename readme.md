@@ -1,4 +1,3 @@
-
 ## -1. To-do лист
 
 - [x] Диагностирование диабета
@@ -7,8 +6,6 @@
 - [ ] Диагностироавние сердечно-сосудистых заболеваний
 - [ ] Диагностирование COVID-19
 - [ ] Диабет: feature importance
-
-
 
 ## 0. О проекте и репозитории
 Данный проект выполнен в рамках домашнего задания Летней Школы МТС.Тета, направление "Машинное обучение" командой **paranormal**:
@@ -106,26 +103,28 @@
 
 ## 5. Оценка экономического эффекта
 
-[Оценка экономического эффекта](diabetes/economic_effect.ipynb)
+[Оценка экономического эффекта](diabetes/effect.ipynb)
 
 ## 6. Разработка и валидация ML модели
 
-[Разработка и валидация ML модели](diabetes/hw_3_model_validation.ipynb)
+[Разработка и валидация ML модели](diabetes/validation.ipynb)
 
-## 7. Телеграм бот
+## 7. Телеграм боты
 
-В качестве демо был разработан сервис в виде телеграм бота.
-Подробнее о нем и его работе в [Bot](diabetes/bot/)
+### Диагностирование диабета
+https://t.me/paranormal_diabetes_bot
+![Alt Text](pics/diabetes_bot.png)
 
-## 8. Web Service 
+### Диагностирование меланомы
+https://t.me/paranormal_melanoma_bot
+![Alt Text](pics/melanoma_bot.png)
+
+## 8. Веб-сервис 
 
 http://paranormal.mcalias.com:8501
 
+### Диагностирование диабета
+![Alt Text](pics/diabetes.gif)
 
-### Diabetes demo
-![Alt Text](diabetes/pics/diabet.gif)
-
-
-### Melanoma demo
-![Alt Text](diabetes/pics/melanoma.gif)
-
+### Диагностирование меланомы
+![Alt Text](pics/melanoma.gif)

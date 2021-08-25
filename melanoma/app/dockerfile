@@ -1,5 +1,0 @@
-FROM python:3.9.6-slim
-WORKDIR /usr/src/app
-COPY app.py lang_ru.py model.onnx requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-CMD streamlit run --server.headless True --server.address 0.0.0.0 --server.port 8501 app.py

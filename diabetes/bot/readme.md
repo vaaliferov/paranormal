@@ -1,4 +1,3 @@
-
 #### virtualenv
 
 ```bash
@@ -42,6 +41,3 @@ vim config.json (<token>)
 docker build -t <user>/diabetes_bot .
 docker run --rm --name diabetes_bot <user>/diabetes_bot
 ```
-
-https://t.me/paranormal_diabetes_bot
-![image](../pics/tg.png)

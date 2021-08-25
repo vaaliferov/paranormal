@@ -1,4 +1,3 @@
-
 ### virtualenv
 
 ```bash
@@ -43,6 +42,3 @@ gdown --id 1KNeRnzxYF4X-DhvFfL_mrMDabWnTrPmg -O model.onnx
 docker build -t <user>/melanoma_bot .
 docker run --rm --name melanoma_bot <user>/melanoma_bot
 ```
-
-https://t.me/paranormal_melanoma_bot
-![image](../pics/bot.png)

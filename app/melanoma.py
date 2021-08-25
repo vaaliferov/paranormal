@@ -1,4 +1,3 @@
-
 def app():
 
     import onnxruntime
