@@ -1,9 +1,10 @@
 
 import streamlit as st
 import lang.app as lng
-import diabetes, melanoma
+import about, diabetes, melanoma
 
 apps = (
+    (lng.about_us, about.app),
     (lng.diabetes, diabetes.app), 
     (lng.melanoma, melanoma.app))
 

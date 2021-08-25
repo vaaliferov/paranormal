@@ -1,3 +1,4 @@
-diabetes = 'Диабета'
-melanoma = 'Меланомы'
+about_us = 'О нас'
+diabetes = 'Диабет'
+melanoma = 'Меланома'
 diagnosis = 'Диагностирование'
