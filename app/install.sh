@@ -2,6 +2,11 @@
 
 if [ "$#" -eq 0 ]; then exit 1; fi
 
+systemctl stop paranormal_app.service
+systemctl disable paranormal_app.service
+rm /etc/systemd/system/paranormal_app.service
+rm -rf /opt/paranormal_app
+
 USER=$1
 
 sed -i "s/<user>/$USER/g" app.service
