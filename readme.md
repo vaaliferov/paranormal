@@ -109,17 +109,7 @@
 
 [Разработка и валидация ML модели](diabetes/validation.ipynb)
 
-## 7. Телеграм боты
-
-### Диагностирование диабета
-https://t.me/paranormal_diabetes_bot
-![Alt Text](pics/diabetes_bot.png)
-
-### Диагностирование меланомы
-https://t.me/paranormal_melanoma_bot
-![Alt Text](pics/melanoma_bot.png)
-
-## 8. Веб-сервис 
+## 7. Веб-сервис
 
 http://paranormal.mcalias.com:8501
 
@@ -128,3 +118,13 @@ http://paranormal.mcalias.com:8501
 
 ### Диагностирование меланомы
 ![Alt Text](pics/melanoma.gif)
+
+## 8. Телеграм боты
+
+### Диагностирование диабета
+https://t.me/paranormal_diabetes_bot
+![Alt Text](pics/diabetes_bot.png)
+
+### Диагностирование меланомы
+https://t.me/paranormal_melanoma_bot
+![Alt Text](pics/melanoma_bot.png)
