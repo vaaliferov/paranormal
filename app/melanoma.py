@@ -76,6 +76,9 @@ def app():
         image = st.file_uploader('photo', type='jpg')
         submit = st.form_submit_button(label=lng.check)
 
+    if submit and image is None:
+        st.markdown(lng.photo_needed + ' ⚠️')
+
     if submit and image is not None:
         im = Image.open(image)
         model = st.session_state.model
