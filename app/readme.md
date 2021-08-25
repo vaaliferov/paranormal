@@ -25,6 +25,7 @@ docker run -p 127.0.0.1:8501:8501/tcp --rm --name paranormal_app <user>/paranorm
 google-chrome http://127.0.0.1:8501
 ```
 
-http://paranormal.ipq.co:8501  
+* http://35.232.21.137:8501  
+* http://paranormal.ipq.co:8501  
 
 ![image](../pics/app.png)  
