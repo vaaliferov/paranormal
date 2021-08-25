@@ -9,9 +9,9 @@ sed -i "s/<user>/$USER/g" app.service
 mkdir /opt/paranormal_app
 chown $USER /opt/paranormal_app
 chmod 755 /opt/paranormal_app
-cp . /opt/paranormal_app
+cp -r . /opt/paranormal_app
 
-cp app.service /etc/systemd/system/paranormal_app.serivce
+cp app.service /etc/systemd/system/paranormal_app.service
 
 apt install python3-venv
 pip3 install virtualenv
