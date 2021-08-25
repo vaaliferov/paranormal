@@ -99,7 +99,7 @@
 
 * Также целевой класс коррелирует с внезапной потерей веса. https://www.medicinenet.com/is_weight_loss_caused_by_diabetes_dangerous/ask.htm
 
-[Модель](diabetes/model.ipynb)
+* [Модель](diabetes/model.ipynb)
 
 ## 5. Оценка экономического эффекта
 
