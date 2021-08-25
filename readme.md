@@ -108,10 +108,15 @@
 
 ## 8. Web Service 
 
-http://diabetes.ipq.co:8501/
+http://paranormal.mcalias.com:8501
 
-![Alt Text](diabetes/pics/web.gif)
 
+### Diabetes demo
+![Alt Text](diabetes/pics/diabet.gif)
+
+
+### Melanoma demo
+![Alt Text](diabetes/pics/melanoma.gif)
 
 
 **В планы команды входит расширение функциональность сервиса - помимо диагностики диабета будут выявление меланомы и диагностика сердечно-сосудистых заболеваний.**
