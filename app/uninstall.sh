@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-systemctl stop paranormal_app.service
-systemctl disable paranormal_app.service
-rm /etc/systemd/system/paranormal_app.service
-rm -rf /opt/paranormal_app
+
+APP=paranormal_app
+DIR=/opt/$APP
+SERVICE=$APP.service
+
+systemctl stop $SERVICE
+systemctl disable $SERVICE
+rm /etc/systemd/system/$SERVICE
 systemctl daemon-reload
+rm -rf $DIR

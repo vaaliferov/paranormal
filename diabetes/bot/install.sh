@@ -2,30 +2,33 @@
 
 if [ "$#" -eq 0 ]; then exit 1; fi
 
-systemctl stop diabetes_bot.service
-systemctl disable diabetes_bot.service
-rm /etc/systemd/system/diabetes_bot.service
-rm -rf /opt/diabetes_bot
-
 USER=$1
+APP=diabetes_bot
+DIR=/opt/$APP
+SERVICE=$APP.service
+
+systemctl stop $SERVICE
+systemctl disable $SERVICE
+rm /etc/systemd/system/$SERVICE
+rm -rf $DIR
 
 sed -i "s/<user>/$USER/g" bot.service
 
-mkdir /opt/diabetes_bot
-chown $USER /opt/diabetes_bot
-chmod 755 /opt/diabetes_bot
-cp -r . /opt/diabetes_bot
+mkdir $DIR
+chown $USER $DIR
+chmod 755 $DIR
+cp -r . $DIR
 
-cp bot.service /etc/systemd/system/diabetes_bot.service
+cp bot.service /etc/systemd/system/$SERVICE
 
 apt install $(cat apt.txt)
 apt install python3-venv
 pip3 install virtualenv
-python3 -m venv /opt/diabetes_bot/env
-source /opt/diabetes_bot/env/bin/activate
+python3 -m venv $DIR/env
+source $DIR/env/bin/activate
 pip3 install -r requirements.txt
 deactivate
 
 systemctl daemon-reload
-systemctl start diabetes_bot.service
-systemctl enable diabetes_bot.service
+systemctl start $SERVICE
+systemctl enable $SERVICE
