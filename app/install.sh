@@ -7,7 +7,7 @@ APP=paranormal_app
 DIR=/opt/$APP
 SERVICE=$APP.service
 
-systemctl stop paranormal_app.service
+systemctl stop $SERVICE
 systemctl disable $SERVICE
 rm /etc/systemd/system/$SERVICE
 rm -rf $DIR
