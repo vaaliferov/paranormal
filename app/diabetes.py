@@ -34,7 +34,9 @@ def app():
         data = pd.DataFrame([fields])
         data.replace({lng.male: 1, lng.female: 0}, inplace=True)
         data.replace({True: 1, False: 0}, inplace=True)
-        model = pickle.load(open('models/diabetes.pkl','rb'))
+        app_path = os.path.dirname(__file__)
+        model_path = os.path.join(app_path, 'models', 'diabetes.pkl')
+        model = pickle.load(open(model_path,'rb'))
         probas = model.predict_proba(data)[:,1]
         predicted = model.predict(data)
         e = '⚠️' if predicted[0] else '✅'

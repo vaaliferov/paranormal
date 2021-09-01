@@ -66,7 +66,9 @@ def app():
     st.title(lng.melanoma_diagnosis)
 
     if 'model' not in st.session_state:
-        st.session_state.model = onnxruntime.InferenceSession('models/melanoma.onnx')
+        app_path = os.path.dirname(__file__)
+        model_path = os.path.join(app_path, 'models','melanoma.onnx')
+        st.session_state.model = onnxruntime.InferenceSession(model_path)
 
     with st.form(key='melanoma_input_form'):
         age = st.slider(lng.age, 0, 90, 25, 5)
