@@ -111,7 +111,8 @@
 
 ## 7. Веб-сервис
 
-http://paranormal.mcalias.com:8501
+http://paranormal.mcalias.com:8501  
+https://share.streamlit.io/vaaliferov/paranormal/app/app.py  
 
 ### Диагностирование диабета
 ![Alt Text](pics/diabetes.gif)
