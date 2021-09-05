@@ -101,10 +101,10 @@ def handle_text(update, context):
         answers[chat_id] = []
         update.message.reply_text(questions[0][0])
 
-        if chat_id != opt['bot_owner_id']:
-            username = update.message.from_user.username
-            context.bot.send_message(opt['bot_owner_id'], f'user @{username}')
-
+        # if update.message.chat_id != bot_onwer:
+        user = update.message.from_user
+        msg = f"@{user['username']} {user['id']}"
+        context.bot.send_message(opt['bot_owner_id'], msg)
     
     elif chat_id in answers:
         
