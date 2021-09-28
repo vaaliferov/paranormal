@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-if [ "$#" -eq 0 ]; then exit 1; fi
+USAGE='usage: sudo ./install.sh <user> <port>'
+if [ $# != 2 ]; then echo $USAGE; exit 1; fi
 
-USER=$1
+USER=$1; PORT=$2
 APP=paranormal_app
 DIR=/opt/$APP
 SERVICE=$APP.service
@@ -13,6 +14,7 @@ rm /etc/systemd/system/$SERVICE
 rm -rf $DIR
 
 sed -i "s/<user>/$USER/g" app.service
+sed -i "s/<port>/$PORT/g" app.service
 
 mkdir $DIR
 chown $USER $DIR
@@ -25,6 +27,7 @@ apt install python3-venv
 pip3 install virtualenv
 python3 -m venv $DIR/env
 source $DIR/env/bin/activate
+pip3 install wheel
 pip3 install -r requirements.txt
 deactivate
 
