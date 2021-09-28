@@ -4,10 +4,9 @@
 git clone https://github.com/vaaliferov/paranormal.git
 
 cd paranormal/app
-sudo ./install.sh <user>
+sudo ./install.sh <user> <port>
 
 systemctl status paranormal_app.service
-google-chrome http://127.0.0.1:8501
 
 cd /opt/paranormal_app
 sudo ./uninstall.sh

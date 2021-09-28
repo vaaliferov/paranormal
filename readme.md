@@ -111,7 +111,7 @@
 
 ## 7. Веб-сервис
 
-http://paranormal.mcalias.com:8501  
+http://168.138.90.69:8503    
 https://share.streamlit.io/vaaliferov/paranormal/app/app.py  
 
 ### Диагностирование диабета
