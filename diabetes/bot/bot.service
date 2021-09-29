@@ -1,11 +1,11 @@
 [Unit]
-Description=diabetes_bot
+Description=<name>_bot
 
 [Service]
 Type=simple
 User=<user>
-WorkingDirectory=/opt/diabetes_bot
-ExecStart=/opt/diabetes_bot/env/bin/python3 /opt/diabetes_bot/bot.py
+WorkingDirectory=/opt/<name>_bot
+ExecStart=/opt/<name>_bot/env/bin/python3 /opt/<name>_bot/bot.py <owner> <token>
 
 [Install]
 WantedBy=multi-user.target

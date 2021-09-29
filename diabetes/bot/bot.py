@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import json
 import pickle
 import numpy as np
@@ -7,6 +8,12 @@ import pandas as pd
 from telegram.ext import Updater
 from telegram.ext import Filters
 from telegram.ext import MessageHandler
+
+
+if len(sys.argv) != 3: sys.exit()
+
+bot_onwer = int(sys.argv[1])
+bot_token = sys.argv[2]
 
 
 l_yes = 'да'
@@ -104,7 +111,7 @@ def handle_text(update, context):
         # if update.message.chat_id != bot_onwer:
         user = update.message.from_user
         msg = f"@{user['username']} {user['id']}"
-        context.bot.send_message(opt['bot_owner_id'], msg)
+        context.bot.send_message(bot_onwer, msg)
     
     elif chat_id in answers:
         
@@ -127,8 +134,7 @@ def handle_text(update, context):
 
 
 model = pickle.load(open('ext_random_forest.pkl', 'rb'))
-opt = json.load(open('config.json','r'))
-updater = Updater(opt['bot_token'])
+updater = Updater(bot_token)
 dispatcher = updater.dispatcher
 dispatcher.add_handler(MessageHandler(Filters.text, handle_text))
 updater.start_polling()
