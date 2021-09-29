@@ -4,8 +4,7 @@
 git clone https://github.com/vaaliferov/paranormal.git
 
 cd paranormal/diabetes/bot
-vim config.json (<token>)
-sudo ./install.sh <user>
+sudo ./install.sh <name> <user> <token> <owner>
 
 systemctl status diabetes_bot.service
 
@@ -19,8 +18,6 @@ sudo ./uninstall.sh
 git clone https://github.com/vaaliferov/paranormal.git
 
 cd paranormal/diabetes/bot
-vim config.json (<token>)
-
 docker build -t <user>/diabetes_bot .
 docker run --rm --name diabetes_bot <user>/diabetes_bot
 ```
